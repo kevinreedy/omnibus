@@ -1,7 +1,6 @@
 pkg_name=omnibus
 pkg_origin=kevinreedy
-# TODO: pull from lib/version
-pkg_version="5.6.1"
+pkg_version=$(grep VERSION $PLAN_CONTEXT/../lib/omnibus/version.rb | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
 pkg_deps=(
   core/ruby
   core/bundler
